@@ -1,0 +1,35 @@
+-- Active: 1697631723492@@127.0.0.1@3306
+CREATE DATABASE WORK;
+    use work;
+    create table teacher (DID varchar(12) primary key,FName varchar(12) NOT NULL, LName varchar(12) NOT NULL, salary int, speciality_code varchar(12),DeptNo varchar(12));
+    create table SPECIALITY (Speciality_Code varchar(12) primary key, Name varchar(12) NOT NULL unique);
+    create table DEPARTMENT( DeptNo varchar(12) primary key, Name varchar(12) Unique);
+    insert into teacher values('A01','Ssentongo','Nicholas',1000000, 'F01','D01');
+
+    insert into teacher values('A02','Kemirembe','Hajarah',1000000, 'F02','D01');
+    insert into teacher values('A03','Noreen','Nantongo',1000000, 'F03','D01');
+    DESC TEACHER;
+    insert into speciality values('S01','IT');
+    insert into speciality values('S02','DIT');
+    insert into speciality values('S03','BSCS');
+
+    insert into department values('DD1','COMPT DEPT');
+    insert into department values('DD2','LAW DEPT');
+    insert into department values('DD3','ART DEPT');
+    SELECT * FROM TEACHER;
+    SELECT * FROM DEPARTMENT;
+    SELECT * FROM SPECIALITY;
+    alter table department add column (section varchar(12));
+    desc teacher;
+    update department set section='1' where name='compt dept';
+     update department set section='2' where name='law dept';
+      update department set section='3' where name='art dept';
+       update teacher set fname='surname';
+       update teacher set fname='henr' where fname='surname';
+       update teacher set fname='hary' where fname='surname';
+       alter table teacher rename column fname to Surname;
+        desc teacher;
+        update teacher set salary = salary + (salary * 0.15);
+        select  * FROM teacher where salary between 400000 and 8000000;
+    
+    
